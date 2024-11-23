@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/v1/funcionario")
-public class FuncionarioAPI {
+public interface FuncionarioAPI {
+        @PostMapping
+        @ResponseStatus(code = HttpStatus.CREATED)
+        FuncionarioResponse postFuncionario(@RequestBody FuncionarioRequest funcionarioRequest);
 
-    @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
-    FuncionarioResponse postFuncionario(@RequestBody FuncionarioRequest funcionarioRequest) {
-        return null;
-    }
+
 }
