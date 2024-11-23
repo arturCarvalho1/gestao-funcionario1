@@ -1,18 +1,26 @@
 package sgf.gestao_funcionarios.funcionario.application.service;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
 import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioResponse;
+import sgf.gestao_funcionarios.funcionario.application.repository.FuncionarioRepository;
+import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
 
 @Service
 @Log4j2
+@RequiredArgsConstructor
 public class FuncionarioApplicationService implements FuncionarioService{
+    private final FuncionarioRepository funcionarioRepository;
 
     @Override
     public FuncionarioResponse criaFuncionario(FuncionarioRequest funcionarioRequest){
        log.info("[inicia] FuncionarioApplicationService - criaFuncionario");
+       Funcionario funcionario = funcionarioRepository.salva(new Funcionario(funcionarioRequest));
        log.info("[finaliza] FuncionarioApplicationService - criaFuncionario");
-        return null;
+        return FuncionarioResponse.builder()
+                .idFuncionario(funcionario.getIdFuncionario())
+                .build();
     }
 }

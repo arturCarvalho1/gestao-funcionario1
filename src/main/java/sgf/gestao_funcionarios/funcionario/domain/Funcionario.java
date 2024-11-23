@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
 
 import java.util.UUID;
 
@@ -24,11 +25,11 @@ public class Funcionario {
     private String telefone;
     private String endereco;
 
-    public Funcionario(String designacao, String endereco, UUID idFuncionario, String name, double salario, String telefone) {
-        this.designacao = designacao;
-        this.endereco = endereco;
-        this.name = name;
-        this.salario = salario;
-        this.telefone = telefone;
+    public Funcionario(FuncionarioRequest funcionarioRequest) {
+        this.designacao = funcionarioRequest.getDesignacao();
+        this.endereco = funcionarioRequest.getEndereco();
+        this.name = funcionarioRequest.getName();
+        this.salario = funcionarioRequest.getSalario();
+        this.telefone = funcionarioRequest.getTelefone();
     }
 }
