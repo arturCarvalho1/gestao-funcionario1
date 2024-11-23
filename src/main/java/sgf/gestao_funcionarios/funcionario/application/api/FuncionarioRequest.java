@@ -5,11 +5,12 @@ import lombok.Value;
 
 @Value
 public class FuncionarioRequest {
-    @NotBlank
-    private String name;
-    private String designacao;
-    private double salario;
-    @NotBlank
-    private String telefone;
-    private String endereco;
+        @NotBlank(message = "O nome não pode estar vazio.")
+        private String name;
+        private String designacao;
+        private double salario;
+        @NotBlank(message = "O telefone não pode estar vazio.")
+        private String telefone;
+        private String endereco;
+
 }

@@ -8,6 +8,7 @@ import sgf.gestao_funcionarios.funcionario.application.service.FuncionarioServic
 @RestController
 @Log4j2
 @RequiredArgsConstructor
+
 public class FuncionarioController implements FuncionarioAPI {
     private final FuncionarioService funcionarioService;
 
