@@ -44,6 +44,7 @@ public class FuncionarioController implements FuncionarioAPI {
     public void deletaFuncionarioAtravesId(UUID idFuncionario) {
         log.info("[inicia] FuncionarioController - deletaFuncionarioAtravesId ");
         log.debug("[idFuncionario] {}", idFuncionario);
+        funcionarioService.deletaFuncionarioAtravesId(idFuncionario);
         log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId ");
 
     }
