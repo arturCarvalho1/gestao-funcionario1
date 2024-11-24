@@ -1,5 +1,6 @@
 package sgf.gestao_funcionarios.funcionario.application.service;
 
+import jakarta.validation.Valid;
 import sgf.gestao_funcionarios.funcionario.application.api.*;
 
 import java.util.List;
@@ -10,4 +11,5 @@ public interface FuncionarioService {
     List<FuncionarioListResponse> buscaTodosFuncionarios();
     FuncionarioDetalhadoResponse buscaFuncionarioAtravesId(UUID idFuncionario);
     void deletaFuncionarioAtravesId(UUID idFuncionario);
+    void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }

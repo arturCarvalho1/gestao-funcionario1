@@ -2,10 +2,7 @@ package sgf.gestao_funcionarios.funcionario.application.repository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
-import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioDetalhadoResponse;
-import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioListResponse;
-import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioRequest;
-import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioResponse;
+import sgf.gestao_funcionarios.funcionario.application.api.*;
 import sgf.gestao_funcionarios.funcionario.application.repository.FuncionarioRepository;
 import sgf.gestao_funcionarios.funcionario.application.service.FuncionarioService;
 import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
@@ -51,6 +48,16 @@ public class FuncionarioApplicationService implements FuncionarioService {
         Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
         funcionarioRepository.deletaFuncionario(funcionario);
         log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId");
+
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
+        Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
+        funcionario.altera(funcionarioAlteracaoRequest);
+        funcionarioRepository.salva(funcionario);
+        log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
 
     }
 
