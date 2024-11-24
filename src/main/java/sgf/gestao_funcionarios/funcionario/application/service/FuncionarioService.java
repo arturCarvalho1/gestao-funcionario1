@@ -1,6 +1,5 @@
 package sgf.gestao_funcionarios.funcionario.application.service;
 
-import jakarta.validation.Valid;
 import sgf.gestao_funcionarios.funcionario.application.api.*;
 
 import java.util.List;

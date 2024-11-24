@@ -1,6 +1,5 @@
 package sgf.gestao_funcionarios.funcionario.application.repository;
 
-import sgf.gestao_funcionarios.funcionario.application.api.FuncionarioDetalhadoResponse;
 import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
 
 import java.util.List;

@@ -3,7 +3,6 @@ package sgf.gestao_funcionarios.funcionario.infra;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import sgf.gestao_funcionarios.funcionario.application.handler.APIException;
 import sgf.gestao_funcionarios.funcionario.application.repository.FuncionarioRepository;

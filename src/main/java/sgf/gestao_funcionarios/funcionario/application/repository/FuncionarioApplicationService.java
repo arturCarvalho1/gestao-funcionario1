@@ -3,7 +3,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 import sgf.gestao_funcionarios.funcionario.application.api.*;
-import sgf.gestao_funcionarios.funcionario.application.repository.FuncionarioRepository;
 import sgf.gestao_funcionarios.funcionario.application.service.FuncionarioService;
 import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
 
