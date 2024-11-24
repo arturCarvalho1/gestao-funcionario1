@@ -10,6 +10,7 @@ import sgf.gestao_funcionarios.funcionario.application.service.FuncionarioServic
 import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -34,4 +35,5 @@ public class FuncionarioApplicationService implements FuncionarioService {
         log.info("[finaliza] FuncionarioController - buscaTodosFuncionarios");
         return FuncionarioListResponse.converte(funcionarios);
     }
+
 }

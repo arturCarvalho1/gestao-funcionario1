@@ -16,5 +16,10 @@ public interface FuncionarioAPI {
 
         @GetMapping
         @ResponseStatus(code = HttpStatus.OK)
-        List<FuncionarioListResponse> getTodosClientes();
+        List<FuncionarioListResponse> getTodosFuncionarios();
+
+        @GetMapping(value = "/{idFuncionario}")
+        @ResponseStatus(code = HttpStatus.OK)
+        FuncionarioDetalhadoResponse getClienteAtravesId(@PathVariable UUID idFuncionario);
+
 }
