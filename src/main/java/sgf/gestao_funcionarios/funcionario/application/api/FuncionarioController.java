@@ -30,4 +30,10 @@ public class FuncionarioController implements FuncionarioAPI {
         log.info("[finaliza] FuncionarioController - getTodosClientes");
         return funcionarios;
     }
+
+    @Override
+    public void deletaFuncionarioAtravesId(UUID idFuncionario) {
+        log.info("[inicia] FuncionarioController - deletaFuncionarioAtravesId");
+        log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId");
+    }
 }
