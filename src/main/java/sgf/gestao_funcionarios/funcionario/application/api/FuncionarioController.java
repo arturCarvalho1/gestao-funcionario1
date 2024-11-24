@@ -1,5 +1,6 @@
 package sgf.gestao_funcionarios.funcionario.application.api;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,10 +44,18 @@ public class FuncionarioController implements FuncionarioAPI {
     @Override
     public void deletaFuncionarioAtravesId(UUID idFuncionario) {
         log.info("[inicia] FuncionarioController - deletaFuncionarioAtravesId ");
-        log.debug("[idFuncionario] {}", idFuncionario);
+        log.info("[idFuncionario] {}", idFuncionario);
         funcionarioService.deletaFuncionarioAtravesId(idFuncionario);
         log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId ");
 
     }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario,@Valid FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
+        log.info("[idFuncionario] {}", idFuncionario);
+        log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
+    }
+
 
 }
