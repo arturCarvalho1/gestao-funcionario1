@@ -32,10 +32,4 @@ public class FuncionarioIfraRepository implements FuncionarioRepository {
         return todosFuncinarios;
     }
 
-    @Override
-    public void deletaFuncionarioAtravesId(UUID idFuncionario) {
-        log.info("[inicia] FuncionarioIfraRepository - deletaFuncionarioAtravesId");
-        log.info("[finaliza] FuncionarioIfraRepository - deletaFuncionarioAtravesId");
-
-    }
 }

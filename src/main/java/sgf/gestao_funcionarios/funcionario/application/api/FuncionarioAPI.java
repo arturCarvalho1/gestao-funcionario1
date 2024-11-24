@@ -17,9 +17,4 @@ public interface FuncionarioAPI {
         @GetMapping
         @ResponseStatus(code = HttpStatus.OK)
         List<FuncionarioListResponse> getTodosClientes();
-
-        @DeleteMapping(value = "/{idFuncionario}")
-        @ResponseStatus(code = HttpStatus.NO_CONTENT)
-        void deletaFuncionarioAtravesId(@PathVariable UUID idFuncionario);
-
 }

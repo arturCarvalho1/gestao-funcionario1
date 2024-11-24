@@ -2,6 +2,7 @@ package sgf.gestao_funcionarios.funcionario.application.api;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import sgf.gestao_funcionarios.funcionario.application.service.FuncionarioService;
 
@@ -10,8 +11,8 @@ import java.util.UUID;
 
 @RestController
 @Log4j2
+@RequestMapping("/api/v1/funcionarios")
 @RequiredArgsConstructor
-
 public class FuncionarioController implements FuncionarioAPI {
     private final FuncionarioService funcionarioService;
 
@@ -31,11 +32,4 @@ public class FuncionarioController implements FuncionarioAPI {
         return funcionarios;
     }
 
-    @Override
-    public void deletaFuncionarioAtravesId(UUID idFuncionario) {
-        log.info("[inicia] FuncionarioController - deletaFuncionarioAtravesId");
-        log.info("[idFuncionario] {}", idFuncionario);
-        funcionarioService.deletaFuncionarioAtravesId(idFuncionario);
-        log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId");
-    }
 }
