@@ -49,7 +49,7 @@ public class FuncionarioApplicationService implements FuncionarioService {
     public void deletaFuncionarioAtravesId(UUID idFuncionario) {
         log.info("[inicia] FuncionarioController - deletaFuncionarioAtravesId");
         Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
-        //funcionarioRepository.deletaFuncionario(idFuncionario);
+        funcionarioRepository.deletaFuncionario(funcionario);
         log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId");
 
     }
