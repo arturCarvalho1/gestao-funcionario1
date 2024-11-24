@@ -15,6 +15,6 @@ public interface FuncionarioAPI {
 
         @GetMapping
         @ResponseStatus(code = HttpStatus.OK)
-        List<ClienteListResponse> getTodosClientes();
+        List<FuncionarioListResponse> getTodosClientes();
 
 }
