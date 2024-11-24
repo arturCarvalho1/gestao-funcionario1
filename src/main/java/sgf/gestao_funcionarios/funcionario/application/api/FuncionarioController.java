@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sgf.gestao_funcionarios.funcionario.application.service.FuncionarioService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -28,6 +29,14 @@ public class FuncionarioController implements FuncionarioAPI {
         List<FuncionarioListResponse> funcionarios = funcionarioService.buscaTodosFuncionarios();
         log.info("[finaliza] FuncionarioController - getTodosClientes");
         return funcionarios;
+    }
+
+    @Override
+    public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
+        log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
+        log.info("[idCliente] {}", idFuncionario);
+        log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
+
     }
 
 }
