@@ -17,9 +17,4 @@ public interface FuncionarioAPI {
         @GetMapping
         @ResponseStatus(code = HttpStatus.OK)
         List<FuncionarioListResponse> getTodosClientes();
-
-        @PatchMapping(value = "/{idFuncionario}")
-        @ResponseStatus(code = HttpStatus.NO_CONTENT)
-        void patchAlteraFuncionario(@PathVariable UUID idFuncionario,
-                                    @Valid @RequestBody FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }

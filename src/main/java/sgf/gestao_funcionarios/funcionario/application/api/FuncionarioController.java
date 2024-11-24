@@ -30,13 +30,4 @@ public class FuncionarioController implements FuncionarioAPI {
         log.info("[finaliza] FuncionarioController - getTodosClientes");
         return funcionarios;
     }
-
-    @Override
-    public void patchAlteraFuncionario(UUID idFuncionario, FuncionarioAlteracaoRequest funcionarioAlteracaoRequest) {
-        log.info("[inicia] FuncionarioController - patchAlteraFuncionario");
-        log.info("[idCliente] {}", idFuncionario);
-        log.info("[finaliza] FuncionarioController - patchAlteraFuncionario");
-
-    }
-
 }
