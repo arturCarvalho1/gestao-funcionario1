@@ -11,4 +11,5 @@ import java.util.UUID;
 public interface FuncionarioService {
     FuncionarioResponse criaFuncionario(FuncionarioRequest funcionarioRequest);
     List<FuncionarioListResponse> buscaTodosFuncionarios();
+    void deletaFuncionarioAtravesId(UUID idFuncionario);
 }

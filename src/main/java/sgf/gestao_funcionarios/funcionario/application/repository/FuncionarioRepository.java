@@ -8,4 +8,5 @@ import java.util.UUID;
 public interface FuncionarioRepository {
     Funcionario salva(Funcionario funcionario);
     List<Funcionario> buscaTodosFuncionarios();
+    void deletaFuncionarioAtravesId(UUID idFuncionario);
 }

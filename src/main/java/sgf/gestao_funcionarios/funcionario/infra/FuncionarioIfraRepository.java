@@ -8,6 +8,7 @@ import sgf.gestao_funcionarios.funcionario.application.repository.FuncionarioRep
 import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 @Log4j2
@@ -29,5 +30,12 @@ public class FuncionarioIfraRepository implements FuncionarioRepository {
         List<Funcionario> todosFuncinarios = funcionarioSpringDataJPARepository.findAll();
         log.info("[finaliza] FuncionarioIfraRepository - buscaTodosFuncionarios");
         return todosFuncinarios;
+    }
+
+    @Override
+    public void deletaFuncionarioAtravesId(UUID idFuncionario) {
+        log.info("[inicia] FuncionarioIfraRepository - deletaFuncionarioAtravesId");
+        log.info("[finaliza] FuncionarioIfraRepository - deletaFuncionarioAtravesId");
+
     }
 }
