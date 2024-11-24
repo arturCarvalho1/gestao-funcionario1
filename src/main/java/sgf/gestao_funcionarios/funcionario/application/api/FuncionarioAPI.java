@@ -20,6 +20,10 @@ public interface FuncionarioAPI {
 
         @GetMapping(value = "/{idFuncionario}")
         @ResponseStatus(code = HttpStatus.OK)
-        FuncionarioDetalhadoResponse getClienteAtravesId(@PathVariable UUID idFuncionario);
+        FuncionarioDetalhadoResponse getFuncionarioAtravesId(@PathVariable UUID idFuncionario);
+
+        @DeleteMapping(value = "/{idFuncionario}")
+        @ResponseStatus(code = HttpStatus.NO_CONTENT)
+        void deletaFuncionarioAtravesId(@PathVariable UUID idFuncionario);
 
 }

@@ -32,12 +32,20 @@ public class FuncionarioController implements FuncionarioAPI {
     }
 
     @Override
-    public FuncionarioDetalhadoResponse getClienteAtravesId(UUID idFuncionario) {
+    public FuncionarioDetalhadoResponse getFuncionarioAtravesId(UUID idFuncionario) {
         log.info("[inicia] FuncionarioController - getClienteAtravesId");
         log.debug("[idFuncionario] {}", idFuncionario);
         FuncionarioDetalhadoResponse funcionarioDetalhado = funcionarioService.buscaFuncionarioAtravesId(idFuncionario);
         log.info("[finaliza] FuncionarioController - getClienteAtravesId");
         return funcionarioDetalhado;
+    }
+
+    @Override
+    public void deletaFuncionarioAtravesId(UUID idFuncionario) {
+        log.info("[inicia] FuncionarioController - deletaFuncionarioAtravesId ");
+        log.debug("[idFuncionario] {}", idFuncionario);
+        log.info("[finaliza] FuncionarioController - deletaFuncionarioAtravesId ");
+
     }
 
 }
