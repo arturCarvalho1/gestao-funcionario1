@@ -16,10 +16,18 @@ public interface FuncionarioAPI {
 
         @GetMapping
         @ResponseStatus(code = HttpStatus.OK)
-        List<FuncionarioListResponse> getTodosClientes();
+        List<FuncionarioListResponse> getTodosFuncionarios();
+
+        @GetMapping(value = "/{idFuncionario}")
+        @ResponseStatus(code = HttpStatus.OK)
+        FuncionarioDetalhadoResponse getFuncionarioAtravesId(@PathVariable UUID idFuncionario);
+
+        @DeleteMapping(value = "/{idFuncionario}")
+        @ResponseStatus(code = HttpStatus.NO_CONTENT)
+        void deletaFuncionarioAtravesId(@PathVariable UUID idFuncionario);
 
         @PatchMapping(value = "/{idFuncionario}")
         @ResponseStatus(code = HttpStatus.NO_CONTENT)
         void patchAlteraFuncionario(@PathVariable UUID idFuncionario,
-                                    @Valid @RequestBody FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
+                @Valid @RequestBody FuncionarioAlteracaoRequest funcionarioAlteracaoRequest);
 }
