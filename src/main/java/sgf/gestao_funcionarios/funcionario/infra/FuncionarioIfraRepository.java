@@ -2,8 +2,10 @@ package sgf.gestao_funcionarios.funcionario.infra;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
+import sgf.gestao_funcionarios.funcionario.application.handler.APIException;
 import sgf.gestao_funcionarios.funcionario.application.repository.FuncionarioRepository;
 import sgf.gestao_funcionarios.funcionario.domain.Funcionario;
 
@@ -30,6 +32,15 @@ public class FuncionarioIfraRepository implements FuncionarioRepository {
         List<Funcionario> todosFuncinarios = funcionarioSpringDataJPARepository.findAll();
         log.info("[finaliza] FuncionarioIfraRepository - buscaTodosFuncionarios");
         return todosFuncinarios;
+    }
+
+    @Override
+    public Funcionario buscaFuncionarioAtravesId(UUID idFuncionario) {
+        log.info("[inicia] FuncionarioIfraRepository - buscaFuncionarioAtravesId");
+        Funcionario funcionario = funcionarioSpringDataJPARepository.findById(idFuncionario)
+                .orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado!"));
+        log.info("[finaliza] FuncionarioIfraRepository - buscaFuncionarioAtravesId");
+        return funcionario;
     }
 
 }

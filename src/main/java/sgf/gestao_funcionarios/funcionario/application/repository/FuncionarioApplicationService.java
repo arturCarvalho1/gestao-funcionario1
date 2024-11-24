@@ -40,8 +40,9 @@ public class FuncionarioApplicationService implements FuncionarioService {
     @Override
     public FuncionarioDetalhadoResponse buscaFuncionarioAtravesId(UUID idFuncionario) {
         log.info("[inicia] FuncionarioController - buscaFuncionarioAtravesId");
+        Funcionario funcionario = funcionarioRepository.buscaFuncionarioAtravesId(idFuncionario);
         log.info("[finaliza] FuncionarioController - buscaFuncionarioAtravesId");
-        return null;
+        return new FuncionarioDetalhadoResponse(funcionario);
     }
 
 }
